@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "name": "financial-calculator",
+    "slug": "financial-calculator",
+    "version": "1.0.0",
+    "orientation": "landscape", 
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    }
+  }
+}
