@@ -125,7 +125,7 @@ const useCalculator = () => {
       const nextI = i - f / df;
 
       if (Math.abs(nextI - i) < tolerance) {
-        return new Big(nextI * 100); 
+       return new Big(Number((nextI * 100).toFixed(9)));
       }
       i = nextI;
     }
@@ -156,7 +156,7 @@ const useCalculator = () => {
           res = pmt === 0 ? 0 : -(pv + fv) / pmt; 
           break;
       }
-      return new Big(res);
+      return new Big(Number(res.toFixed(9)));
     }
 
     try {
@@ -185,7 +185,7 @@ const useCalculator = () => {
       if (!Number.isFinite(res) || Number.isNaN(res)) {
         throw new Error("Invalid Math");
       } 
-      return new Big(res); 
+      return new Big(Number(res.toFixed(9)));
      } 
      catch (e) {
       setError("Error 5");
