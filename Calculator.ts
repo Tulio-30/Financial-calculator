@@ -43,7 +43,7 @@ const useCalculator = () => {
     fv: new Big(0)
   });
 
-  const [stats] = useState<Stats>({
+  const [stats, setStats] = useState<Stats>({
     n: 0,
     sumX: new Big(0),
     sumX2: new Big(0),
@@ -223,6 +223,30 @@ const useCalculator = () => {
         workingStack.y = workingStack.z;
         workingStack.z = workingStack.t;
         addHistoryLog("+", workingStack.x);
+        setIsNewInput(true);
+        break;
+
+        case 'sumPlus':
+        workingStack = pushBufferToStack(workingStack);
+        const valX = workingStack.x;
+        const valY = workingStack.y;
+        const newN = stats.n + 1;
+        
+        // Atualiza a memória estatística da calculadora
+        setStats(prev => ({
+          n: prev.n + 1,
+          sumX: prev.sumX.plus(valX),
+          sumX2: prev.sumX2.plus(valX.times(valX)),
+          sumY: prev.sumY.plus(valY),
+          sumY2: prev.sumY2.plus(valY.times(valY)),
+          sumXY: prev.sumXY.plus(valX.times(valY))
+        }));
+
+        // A HP 12C sempre mostra a quantidade de itens (n) no visor após o somatório
+        workingStack.lastX = valX;
+        workingStack.x = new Big(newN);
+        
+        addHistoryLog("Σ+", workingStack.x);
         setIsNewInput(true);
         break;
 

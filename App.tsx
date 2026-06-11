@@ -109,8 +109,8 @@ export default function App() {
                       {renderButton('ON', 'CMD_ON', 'functional', '', '')}
                       {renderButton('f', 'f', 'modifier', '', '')}
                       {renderButton('g', 'g', 'modifier', '', '')}
-                      {renderButton('STO', 'STO', 'functional', '', 'x>')}
-                      {renderButton('RCL', 'RCL', 'functional', '', 'x<0')}
+                      {renderButton('STO', 'STO', 'functional', '', '')}
+                      {renderButton('RCL', 'RCL', 'functional', '', '')}
                     </View>
                   </View>
                   <View style={{ flex: 1 }}>{renderButton('ENTER', 'ENTER', 'functional', 'PREFIX', 'LSTx', true)}</View>
