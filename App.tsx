@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, StatusBar, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import useCalculator from './Calculator';
+import { auth } from "./firebaseConfig"; 
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useEffect } from "react";
 
 export default function App() {
   const { 
@@ -10,6 +13,17 @@ export default function App() {
   } = useCalculator();
   
   const [activeTab, setActiveTab] = useState<'history' | 'memory' | null>(null);
+
+  useEffect(() => {
+    // IMPORTANTE: Troque pelo e-mail e senha que você criou no site!
+    signInWithEmailAndPassword(auth, "tuliovinicius9@gmail.com", "123456789")
+      .then((userCredential) => {
+        console.log("🔥 SUCESSO ABSOLUTO: O login funcionou! Bem-vindo,", userCredential.user.email);
+      })
+      .catch((error) => {
+        console.log("❌ ERRO NO LOGIN:", error.message);
+      });
+  }, []);
 
   const openSideMenu = (tab: 'history' | 'memory') => setActiveTab(tab);
   const closeSideMenu = () => setActiveTab(null);
