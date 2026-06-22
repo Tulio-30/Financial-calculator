@@ -5,6 +5,7 @@ import useCalculator from './Calculator';
 import { auth } from "./firebaseConfig"; 
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useEffect } from "react";
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function App() {
   const { 
@@ -64,7 +65,7 @@ export default function App() {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor="#EAEAEA" hidden={true} />
       
       <View style={styles.topRightNav}>
@@ -242,7 +243,7 @@ export default function App() {
           </View>
         </View>
       )}
-    </View>
+    </SafeAreaView>
   );
 }
 
