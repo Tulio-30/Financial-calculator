@@ -279,19 +279,19 @@ const styles = StyleSheet.create({
   
   // Estilos Corrigidos da Gaveta
   overlayContainer: { position: 'absolute', top: 0, bottom: 0, left: 0, right: 0, backgroundColor: 'rgba(0,0,0,0.5)', zIndex: 20, flexDirection: 'row', justifyContent: 'flex-end' },
-  sideMenu: { width: '45%', minWidth: 320, backgroundColor: '#FFF', height: '100%', shadowColor: '#000', shadowOffset: { width: -2, height: 0 }, shadowOpacity: 0.2, shadowRadius: 10, elevation: 10 },
+  sideMenu: { width: '30%', minWidth: 240, backgroundColor: '#FFF', height: '100%', shadowColor: '#000', shadowOffset: { width: -2, height: 0 }, shadowOpacity: 0.2, shadowRadius: 10, elevation: 10 },
   
   tabHeaderRow: { flexDirection: 'row', borderBottomWidth: 1, borderBottomColor: '#E0E0E0', height: 48 },
   tabBtn: { flex: 1, justifyContent: 'center', alignItems: 'center' },
   activeTabBtn: { borderBottomWidth: 2, borderBottomColor: '#000' },
   tabText: { fontSize: 13, color: '#888', fontWeight: '600' },
   activeTabText: { color: '#000', fontWeight: 'bold' },
-  closeIconBtn: { width: 48, justifyContent: 'center', alignItems: 'center', borderLeftWidth: 1, borderLeftColor: '#E0E0E0' },
+  closeIconBtn: { width: 65, paddingRight: 15,  justifyContent: 'center', alignItems: 'center', borderLeftWidth: 1, borderLeftColor: '#E0E0E0' },
   
-  sideMenuContent: { flex: 1, padding: 20 },
+  sideMenuContent: { flex: 1, padding: 12 },
   sectionHeaderRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 },
   sectionHeaderTitle: { fontSize: 13, fontWeight: 'bold', color: '#000' },
-  trashBtn: { padding: 4 },
+  trashBtn: { paddingRight: 18, paddingLeft: 15, paddingVertical: 10,  justifyContent: 'center', alignItems: 'center', },
   
   listText: { fontSize: 14, color: '#333', fontFamily: 'monospace', marginBottom: 10 },
   listTextBold: { fontSize: 14, color: '#000', fontFamily: 'monospace', fontWeight: 'bold', marginBottom: 10 },
